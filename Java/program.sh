@@ -23,7 +23,8 @@ function verificarJavaVM(){
     read respostaCloneJar
 
     if [ "$respostaCloneJar" == 'y' ]; then
-        git clone https://github.com/GUILHERMEPSANTOS/Java-Sem-interface.git
+        chmod +x ./clonarJarExecutavel.sh
+        ./clonarJarExecutavel.sh
         
     fi
 
