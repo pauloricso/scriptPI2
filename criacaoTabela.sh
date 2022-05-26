@@ -1,8 +1,7 @@
 #!/bin/bash
 
-sudo docker exec -it ContainerBD bash
-
-urubu100
+function intalacaoJavaLocal(){
+sudo docker exec -it Mysql bash
 
 mysql -u root -p urubu100
 
@@ -29,3 +28,5 @@ CREATE TABLE IF NOT EXISTS Log_MemoriaRam(ID_Log_MemoriaRam INT PRIMARY KEY AUTO
 CREATE TABLE IF NOT EXISTS Processador(ID_Processador INT PRIMARY KEY AUTO_INCREMENT, FK_Computador INT, Modelo TEXT, CONSTRAINT FK_Processador_Computador FOREIGN KEY (FK_Computador) REFERENCES Computador(ID_Computador))AUTO_INCREMENT = 1;                   
 								
 CREATE TABLE IF NOT EXISTS Log_Processador(ID_Log_Processador INT PRIMARY KEY AUTO_INCREMENT, FK_Processador INT, Frequencia BIGINT, Uso DOUBLE(4,2), DataLog TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, CONSTRAINT FK_Log_Processador_Processado FOREIGN KEY (FK_Processador) REFERENCES Processador(ID_Processador))AUTO_INCREMENT = 1;
+}
+intalacaoJavaLocal
