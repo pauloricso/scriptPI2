@@ -105,4 +105,41 @@ CREATE TABLE IF NOT EXISTS Log_Processador(ID_Log_Processador INT PRIMARY KEY AU
                                           ,CONSTRAINT FK_Log_Processador_Processado 
 												FOREIGN KEY (FK_Processador)
 													REFERENCES Processador(ID_Processador)
-									)AUTO_INCREMENT = 1;                   
+									)AUTO_INCREMENT = 1; 
+
+INSERT INTO Responsavel (Nome, Email, Senha) values
+("Alberto"	  ,"alberto41@granfram.com.br"	 ,"1234"),
+("Matias" 	  ,"Matias@drogariasp.com.br"	 ,"1234"),
+("Caio"		  ,"caio11@drogasil.com.br"	     ,"1234"),
+("Thiago"     ,"thiago@paguemenos.com.br"    ,"1234"),
+("Paula"      ,"paula@panvel.com.br"		 ,"1234");	
+		
+INSERT INTO  Loja (Nome, Rua, Bairro, Numero, Cidade, Estado, CEP, CNPJ, FK_Responsavel) VALUES
+("GRAN FARMA GRAN FORMULAS - DROGARIA E MANIPULACAO"  , "Rua Senador Flaquer"  , "Centro"	   , 41  , "São Paulo"		   , "SP", "09010160", "06787654000193", 1),
+("Drogaria Sao Paulo S.A."							  , "Praça da Sé"		   , "Sé"	 	   , 41  , "São Paulo"		   , "SP", "01001000", "06787654000193", 2),
+("RAIA DROGASIL S/A"								  , "Praça da Sé"		   , "VILA BUTANTA", 3097, "São Paulo"		   , "SP", "01001001", "61585865000151", 3),
+("EMPREENDIMENTOS PAGUE MENOS S/A"					  , "R SENADOR POMPEU"	   , "Centro"	   , 1520, "Fortaleza"		   , "CE","60025002" , "06626253000151", 4),
+("DIMED S/A - DISTRIBUIDORA DE MEDICAMENTOS"		  , "3a Avenida"		   , "Centro"	   , 80  , "BALNEARIO CAMBORIU", "SC", "88330084", "92665611025161", 5);
+                 
+INSERT INTO Monitorador (FK_Loja, Nome, CPF, Email, Senha) Values
+(1, "Guilherme Pereira", "25445695872",	"guilherme@hotmail.com", "1234"),
+(2, "Rogeiro Alves"	   , "54562145876",	"rogerio@hotmail.com"  , "1234"),
+(3, "Luis Caracio"	   , "25445695872",	"luis@hotmail.com"	   , "1234"),
+(4, "Paulo Eduardo"    , "25445695872",	"paulo@hotmail.com"	   , "1234"),
+(5, "Victo Santos"	   , "25445695872",	"vitor@hotmail.com"	   , "1234");
+
+INSERT INTO Computador (ID_Computador, Senha, FK_Loja) Values
+(1,"1234",2),
+(2,"1234",2),
+(3,"1234",2),
+(4,"1234",1),
+(5,"1234",1),
+(6,"1234",1),
+(7,"1234",2),
+(8,"1234",2),
+(9,"1234", 3),
+(10,"1234",3),
+(11,"1234",4),
+(12,"1234",4),  
+(13,"1234",5),
+(14,"1234",5);                
